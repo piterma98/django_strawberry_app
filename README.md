@@ -1,1 +1,1 @@
-# django_strawberry_aop
+# django_strawberry_app

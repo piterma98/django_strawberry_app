@@ -1,0 +1,32 @@
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+src_paths = "app/"
+
+[tool.mypy]
+python_version = "3.11"
+mypy_path = "app/"
+plugins = ["mypy_django_plugin.main", "strawberry.ext.mypy_plugin"]
+namespace_packages = true
+no_implicit_optional = true
+no_implicit_reexport = true
+strict_equality = true
+warn_redundant_casts = true
+
+[tool.django-stubs]
+django_settings_module = "application.settings"
+
+[tool.ruff]
+extend-exclude = [
+    ".venv",
+    "migrations",
+]
+ignore = [
+    "E402",
+    "E501",
+]
+select = [
+    "E",
+    "F",
+    "W",
+]

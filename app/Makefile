@@ -83,7 +83,7 @@ requirements/.dev.sentinel: requirements/base.txt requirements/dev.txt
 test: requirements/.dev.sentinel ensure-database ## Run entire test suite and emit XML coverage report
 	# cleanup after running tests
 	# see: https://stackoverflow.com/questions/28597794
-	$(virtualenv_python) -m pytest $(pytest_options) --benchmark-skip
+	$(virtualenv_python) -m pytest --benchmark-skip
 	$(virtualenv_coverage) xml
 
 benchmark: requirements/.dev.sentinel ## Run all benchmarks

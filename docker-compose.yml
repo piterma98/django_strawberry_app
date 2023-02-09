@@ -1,13 +1,13 @@
 version: "3.3"
 
 services:
-  postgres_django_graphene:
+  postgres_django_strawberry:
     image: postgres:13.5
     environment:
       POSTGRES_PASSWORD: postgres
     volumes:
       - type: bind
-        source: ./postgres_django_graphene/
+        source: ./postgres_django_strawberry/
         target: /var/lib/postgresql/data/
     ports:
       - target: 5432

@@ -1,0 +1,10 @@
+[report]
+
+omit =
+    tests/*
+    */site-packages/*
+    venv/lib/*
+    */migrations/*
+    */asgi.py
+    */wsgi.py
+    manage.py

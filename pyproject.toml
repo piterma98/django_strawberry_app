@@ -12,6 +12,7 @@ no_implicit_optional = true
 no_implicit_reexport = true
 strict_equality = true
 warn_redundant_casts = true
+check_untyped_defs = true
 
 [tool.django-stubs]
 django_settings_module = "application.settings"
@@ -19,7 +20,6 @@ django_settings_module = "application.settings"
 [tool.ruff]
 extend-exclude = [
     ".venv",
-    "migrations",
 ]
 ignore = [
     "E402",
@@ -30,3 +30,9 @@ select = [
     "F",
     "W",
 ]
+
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "application.settings"
+python_files = ["tests.py", "test_*.py", "*_tests.py"]
+addopts = "-ra --nomigrations --cov=. --cov-report=term"

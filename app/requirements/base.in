@@ -1,5 +1,6 @@
 Django>=4.1,<4.2
 psycopg2-binary>=2.9.5,<3
-strawberry-django-plus>=2.0.4,<2.1
+strawberry-django-plus>=1.35.2,<2.0.0
 strawberry-graphql>=0.156.1,<0.160
 strawberry-graphql-django>=0.9.2,<1
+strawberry-django-auth>=0.374.0,<0.400

@@ -1,4 +1,4 @@
-from graphql_api import schema
+from application.graphql_api import schema
 
 
 def test_query():

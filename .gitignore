@@ -1,7 +1,6 @@
 venv/
 .venv/
 node_modules/
-bot-messenger/ngrok.exe
 *.pyc
 *.log
 .vscode/
@@ -10,7 +9,6 @@ ENV/
 .python-version
 *.sentinel
 
-scrach.py
 package-lock.json
 yarn.lock
 .scannerwork/

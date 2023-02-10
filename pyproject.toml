@@ -35,4 +35,9 @@ select = [
 [tool.pytest.ini_options]
 DJANGO_SETTINGS_MODULE = "application.settings"
 python_files = ["tests.py", "test_*.py", "*_tests.py"]
-addopts = "-ra --nomigrations --cov=. --cov-report=term"
+addopts = "-ra --nomigrations --cov=.. --cov-report=term"
+
+
+[tool.coverage.run]
+source = ["app"]
+omit = [".venv/**", "manage.py"]

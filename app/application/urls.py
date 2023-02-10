@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from strawberry.django.views import AsyncGraphQLView
 
-from graphql_api import schema
+from application.graphql_api import schema
 
 urlpatterns = [
     path("admin/", admin.site.urls),

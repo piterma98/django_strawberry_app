@@ -1,7 +1,7 @@
 import strawberry
 
 
-def get_author_for_book(root) -> "Author":
+def get_author_for_book() -> "Author":
     return Author(name="Michael Crichton")
 
 
@@ -11,7 +11,7 @@ class Book:
     author: "Author" = strawberry.field(resolver=get_author_for_book)
 
 
-def get_books_for_author(root):
+def get_books_for_author() -> list[Book]:
     return [Book(title="Jurassic Park")]
 
 
@@ -21,7 +21,7 @@ class Author:
     books: list[Book] = strawberry.field(resolver=get_books_for_author)
 
 
-def get_authors(root) -> list[Author]:
+def get_authors() -> list[Author]:
     return [Author(name="Michael Crichton")]
 
 

@@ -1,7 +1,7 @@
 from application.graphql_api import schema
 
 
-def test_query():
+def test_query() -> None:
     query = """
         query TestQuery{
             books{

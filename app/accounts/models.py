@@ -13,5 +13,8 @@ class CustomUser(BaseModel, AbstractUser):
         _("email address"), unique=True, validators=[validate_email]
     )
 
+    USERNAME_FIELD = "username"
+    EMAIL_FIELD = "email"
+
     def __str__(self) -> str:
         return self.email

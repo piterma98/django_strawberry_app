@@ -32,6 +32,9 @@ select = [
     "W",
 ]
 
+[tool.ruff.flake8-tidy-imports]
+# Disallow all relative imports.
+ban-relative-imports = "all"
 
 [tool.pytest.ini_options]
 DJANGO_SETTINGS_MODULE = "application.settings"

@@ -198,9 +198,9 @@ strawberry-django-plus==1.35.2 \
     # via
     #   -r requirements/base.in
     #   strawberry-django-auth
-strawberry-graphql==0.156.1 \
-    --hash=sha256:7e0728c197a7647ed4476991b0855fa812ddc2bdebe31853b55ad478c41f38d3 \
-    --hash=sha256:b4ade7577ea8f2e7d4ab48e4e3b1981288442f415af9515e8a29890e0bd5b2dd
+strawberry-graphql==0.156.4 \
+    --hash=sha256:182ff634e3012f0c92a8a44f1d0b137d06f09aa9c56823bcf70f759a9a20857c \
+    --hash=sha256:9bafa2854255aa6b30d20dba3c8acb55ee32b8538883abd1e50c9a57c7597c21
     # via
     #   -r requirements/base.in
     #   strawberry-django-auth

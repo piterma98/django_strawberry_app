@@ -26,6 +26,6 @@ def get_authors() -> list[Author]:
 
 
 @strawberry.type
-class Query:
+class BookQuery:
     authors: list[Author] = strawberry.field(resolver=get_authors)
     books: list[Book] = strawberry.field(resolver=get_books_for_author)

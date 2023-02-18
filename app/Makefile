@@ -13,6 +13,7 @@ python_version := 3.11.1
 python_bin := $(HOME)/.pyenv/versions/$(python_version)/bin/python
 database_name := postgres_django_strawberry
 locale_dir := locale
+pytest_options := --cov=.. --cov-report=term
 
 # Check if we have an external virtualenv (like one created with
 # virtualenvwrapper). If so, we should use that one.
@@ -39,7 +40,7 @@ endif
 
 # --- targets ---
 
-.PHONY: debug-venv help ensure-database compile-requirements upgrade-package test benchmark coverage-report check docs-html clean
+.PHONY: debug-venv help ensure-database compile-requirements upgrade-package test benchmark coverage-report check docs-html clean run
 .DEFAULT_GOAL := help
 
 debug-venv: ## Debug virtualenv-related Makefile variables
@@ -83,7 +84,7 @@ requirements/.dev.sentinel: requirements/base.txt requirements/dev.txt
 test: requirements/.dev.sentinel ensure-database ## Run entire test suite and emit coverage terminal report
 	# cleanup after running tests
 	# see: https://stackoverflow.com/questions/28597794
-	$(virtualenv_python) -m pytest --benchmark-skip
+	$(virtualenv_python) -m pytest $(pytest_options) --benchmark-skip
 
 benchmark: requirements/.dev.sentinel ## Run all benchmarks
 	$(virtualenv_python) -m pytest $(pytest_options) --benchmark-only

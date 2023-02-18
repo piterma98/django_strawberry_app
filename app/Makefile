@@ -105,3 +105,6 @@ ver-%:
 	@echo "Tagging and pushing $(project_name) $*"
 	git tag ver-$*
 	git push origin ver-$*
+
+run: requirements/.dev.sentinel ensure-database
+	$(virtualenv_python) manage.py runserver

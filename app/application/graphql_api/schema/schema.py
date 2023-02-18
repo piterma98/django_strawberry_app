@@ -1,4 +1,7 @@
 import strawberry
+from strawberry.types import Info
+
+from accounts.permissions import IsUserAuthenticated
 
 
 def get_author_for_book() -> "Author":
@@ -18,7 +21,6 @@ def get_books_for_author() -> list[Book]:
 @strawberry.type
 class Author:
     name: str
-    books: list[Book] = strawberry.field(resolver=get_books_for_author)
 
 
 def get_authors() -> list[Author]:
@@ -27,5 +29,8 @@ def get_authors() -> list[Author]:
 
 @strawberry.type
 class BookQuery:
-    authors: list[Author] = strawberry.field(resolver=get_authors)
     books: list[Book] = strawberry.field(resolver=get_books_for_author)
+
+    @strawberry.field(directives=[IsUserAuthenticated()])
+    def authors(self, info: Info) -> list[Author]:
+        return get_authors()

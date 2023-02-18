@@ -14,8 +14,6 @@ class Query(BookQuery, UserQueries):
     def user(self, info: Info) -> str:
         return str(info.context.request.user)
 
-    ...
-
 
 @strawberry.type
 class Mutations(AuthMutation):
